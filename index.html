@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jeeva M | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    :root {
+      --main-bg: rgba(0, 0, 50, 0.7);
+      --text-color: #fff;
+      --accent-color: #fbd46d;
+      --card-bg: rgba(255, 255, 255, 0.1);
+    }
+    body.light {
+      --main-bg: rgba(255, 255, 255, 0.9);
+      --text-color: #222;
+      --accent-color: #007bff;
+      --card-bg: rgba(255, 255, 255, 0.8);
+    }
+    html { scroll-behavior: smooth; }
+    * { transition: all 0.3s ease; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-color);
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--main-bg);
+      z-index: 0;
+    }
+    header, section, footer {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideIn 1s ease forwards;
+    }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header { text-align: center; animation-delay: 0.2s; }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+    header p { font-size: 1.2rem; }
+    h2 {
+      color: var(--accent-color);
+      border-bottom: 1px solid var(--accent-color);
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    ul { padding-left: 1.5rem; }
+    a { color: var(--accent-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    .btn, .toggle-mode {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: var(--accent-color);
+      color: #000;
+      text-decoration: none;
+    }
+    .btn:hover, .toggle-mode:hover { opacity: 0.85; }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      margin: 1rem auto;
+      display: block;
+    }
+    .top-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: var(--accent-color);
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover { opacity: 0.85; }
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: none;
+    }
+    @media (max-width: 600px) {
+      header, section, footer { padding: 1rem; }
+      header h1 { font-size: 2rem; }
+      .profile-pic { width: 120px; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+    <h1>Jeeva M</h1>
+    <p>Data Entry Specialist</p>
+    <div class="top-buttons">
+      <a href="Jeeva-Resume.pdf" class="btn" download>📄 Download Resume</a>
+      <a href="https://wa.me/6382628772/" class="btn" target="_blank">💬 WhatsApp</a>
+      <a href="https://www.linkedin.com/in/jeeva-m-1076991b6/" class="btn" target="_blank">🔗 LinkedIn</a>
+      <button class="toggle-mode" onclick="toggleMode()">🌓 Toggle Mode</button>
+    </div>
+  </header>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Detail-oriented Data Entry Specialist with logistics support experience, strong computer skills, and high typing speed (40WPM).</p>
+  </section>
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <ul>
+      <li><strong>Logistics Assistant</strong> – ONEX LLC, Yerevan (Aug 2023 - Jan 2025)
+        <ul>
+          <li>Coordinated shipments and ensured timely delivery</li>
+          <li>Maintained inventory and delivery records</li>
+        </ul>
+      </li>
+      <li><strong>Data Entry Clerk</strong> – EGB Software, Chennai (May 2022 - Jun 2023)
+        <ul>
+          <li>Boosted data accuracy by 30%</li>
+          <li>Maintained high data integrity</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>B.E. in Computer Science Engineering</strong> – KCG College, Anna University (2022)</p>
+    <p>+2 & SSLC – Velammal Matric Higher Secondary School</p>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Typing Speed: 40 WPM</li>
+      <li>MS Word & Excel</li>
+      <li>Communication Skills</li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📞 Phone: <a href="tel:+916382628772">6382628772</a></p>
+    <p>✉️ Email: <a href="mailto:jeevamari306@icloud.com">jeevamari306@icloud.com</a></p>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div class="success-message" id="successMsg">✅ Message sent successfully!</div>
+    </form>
+  </section>
+  <footer>
+    <p>&copy; 2025 Jeeva M. All rights reserved.</p>
+  </footer>
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light");
+    }
+    const sections = document.querySelectorAll("header, section, footer");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+    const form = document.getElementById("contactForm");
+    const successMsg = document.getElementById("successMsg");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      successMsg.style.display = "block";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
